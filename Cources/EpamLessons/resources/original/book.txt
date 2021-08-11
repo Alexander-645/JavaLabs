@@ -1,0 +1,16 @@
+    Resource bundles belong to families whose members share a common base name, but whose names also have additional
+components that identify their locales. For example, the base name of a family of resource bundles might be "MyResources".
+The family should have a default resource bundle which simply has the same name as its family - "MyResources" - and will
+be used as the bundle of         last resort if a specific locale is not supported. The family can then provide as many
+locale-specific members as needed, for example a German one named "MyResources_de".
+
+    Each resource bundle in a            family contains the same items, but the items have been translated for the locale represented
+by that resource bundle. For example, both "MyResources" and "MyResources_de" may have a String that's used on a button
+for canceling operations.               In "MyResources" the String may contain "Cancel" and in "MyResources_de" it may contain
+"Abbrechen".
+
+    If there are different resources for different countries, you can make specializations: for example, "MyResources_de_CH"
+contains objects for the German language (de) in Switzerland (CH). If you want to only modify some of the resources in
+the specialization, you can do so.
+
+When your program needs a locale-specific object, it loads the ResourceBundle class using the getBundle method:
